@@ -46,13 +46,6 @@ class Task:
         else:
             print("Ошибка: Неверный индекс задачи!")
 
-    def get_pending_tasks(self):
-        """
-        Возвращает список текущих (не выполненных) задач.
-        :return: Список объектов TaskItem, которые не выполнены.
-        """
-        return [task for task in self.tasks if not task.is_completed]
-
     def show_pending_tasks(self):
         """Выводит все текущие (не выполненные) задачи"""
         for i, task in enumerate(self.tasks):
@@ -63,6 +56,7 @@ class Task:
         """Выводит все задачи."""
         for i, task in enumerate(self.tasks):
             print(f"{i}. {task.to_string()}")  # Используем метод to_string()
+
 
 # Пример использования
 
@@ -85,6 +79,4 @@ print(f"\nОтмечаем задачу {description} как выполненн�
 task_manager.mark_task_completed(n)
 
 print("\nТекущие задачи:")
-# for task in task_manager.get_pending_tasks():
-#     print(task.to_string())
 task_manager.show_pending_tasks()
