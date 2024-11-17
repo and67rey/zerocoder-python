@@ -44,12 +44,11 @@ class Store:
 
     def store_info(self):
         """Выводит информацию о магазине"""
-        print('Информация о магазине')
-        print(f'Название: {self.name}')
+        print(f'Информация о магазине: {self.name}')
         print(f'Адрес: {self.address}')
-        print('Асортимент:')
+        print('Ассортимент:')
         for key in self.items:
-            print(f'{key} по цене {self.items[key]}')
+            print(f'\t{key} по цене {self.items[key]}')
         print('\n')
 
 
@@ -72,9 +71,24 @@ store2.store_info()
 store3.store_info()
 
 # Тестирование методов для store1
-print(f"Цены в {store1.name}: {store1.items}")  # Вывод всего ассортимента
-store1.update_price("apples", 0.6)  # Обновляем цену яблок
-print(f"Новая цена apples: {store1.get_price('apples')}")  # Проверяем обновленную цену
-store1.remove_item("bananas")  # Убираем бананы
-print(f"Цены после удаления bananas: {store1.items}")  # Проверяем изменения
-print(f"Цена товара 'oranges': {store1.get_price('oranges')}")  # Тест товара, которого нет
+# Информация о магазине
+store1.store_info()
+# Добавление товара
+item_name = "walnuts"
+store1.add_item(item_name, 1.5)
+print(f"Цена {item_name}: {store1.get_price(item_name)}")
+# Обновление цены на товар
+item_name = "apples"
+store1.update_price(item_name, 0.6)
+# Проверяем обновленную цену
+print(f"Новая цена {item_name}: {store1.get_price(item_name)}")
+# Удаление товара
+item_name = "bananas"
+store1.remove_item(item_name)
+print(f"Цены после удаления {item_name}: {store1.items}")  # Проверяем изменения
+# Запрос цены на отсутствующий товар
+item_name = "oranges"
+print(f"Цена товара {item_name}: {store1.get_price(item_name)}")  # Тест товара, которого нет
+print('\n')
+# Информация о магазине
+store1.store_info()
