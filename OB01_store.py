@@ -42,6 +42,16 @@ class Store:
         if item_name in self.items:
             self.items[item_name] = new_price
 
+    def store_info(self):
+        """Выводит информацию о магазине"""
+        print('Информация о магазине')
+        print(f'Название: {self.name}')
+        print(f'Адрес: {self.address}')
+        print('Асортимент:')
+        for key in self.items:
+            print(f'{key} по цене {self.items[key]}')
+        print('\n')
+
 
 # Создание магазинов
 store1 = Store("Fresh Market", "123 Main St")
@@ -55,6 +65,11 @@ store2.add_item("laptop", 1200)
 store2.add_item("keyboard", 100)
 store3.add_item("book", 15)
 store3.add_item("magazine", 5)
+
+# Вывод информации о магазинах
+store1.store_info()
+store2.store_info()
+store3.store_info()
 
 # Тестирование методов для store1
 print(f"Цены в {store1.name}: {store1.items}")  # Вывод всего ассортимента
