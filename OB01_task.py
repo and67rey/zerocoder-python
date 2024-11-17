@@ -1,6 +1,5 @@
 from datetime import datetime
 
-
 class Task:
     def __init__(self):
         """Инициализация списка задач."""
@@ -54,11 +53,16 @@ class Task:
         """
         return [task for task in self.tasks if not task.is_completed]
 
+    def show_pending_tasks(self):
+        """Выводит все текущие (не выполненные) задачи"""
+        for i, task in enumerate(self.tasks):
+            if not task.is_completed:
+                print(f"{i}. {task.to_string()}")  # Используем метод to_string()
+
     def show_tasks(self):
         """Выводит все задачи."""
         for i, task in enumerate(self.tasks):
             print(f"{i}. {task.to_string()}")  # Используем метод to_string()
-
 
 # Пример использования
 
@@ -81,5 +85,6 @@ print(f"\nОтмечаем задачу {description} как выполненн�
 task_manager.mark_task_completed(n)
 
 print("\nТекущие задачи:")
-for task in task_manager.get_pending_tasks():
-    print(task.to_string())
+# for task in task_manager.get_pending_tasks():
+#     print(task.to_string())
+task_manager.show_pending_tasks()
