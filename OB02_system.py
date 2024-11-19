@@ -41,14 +41,20 @@ class Admin(User):
         if not isinstance(user, User):
             raise TypeError("Объект должен быть экземпляром класса User.")
         user_list.append(user)
-        print(f"Пользователь {user.get_name()} успешно добавлен.")
+        if isinstance(user, Admin):
+            print(f"Администратор {user.get_name()} успешно добавлен.")
+        else:
+            print(f"Пользователь {user.get_name()} успешно добавлен.")
 
     # Метод для удаления пользователя
     def remove_user(self, user_list: list, user_id: int):
         for user in user_list:
             if user.get_user_id() == user_id:
                 user_list.remove(user)
-                print(f"Пользователь {user.get_name()} (ID: {user_id}) успешно удален.")
+                if isinstance(user, Admin):
+                    print(f"Администратор {user.get_name()} (ID: {user_id}) успешно удален.")
+                else:
+                    print(f"Пользователь {user.get_name()} (ID: {user_id}) успешно удален.")
                 return
         print(f"Пользователь с ID {user_id} не найден.")
 
@@ -62,14 +68,19 @@ class Admin(User):
 # Создаем список пользователей
 user_list = []
 
-# Создаем администратора
-admin = Admin(user_id=1, name="Alice", admin_level=5)
+# Добавляем администраторов
+admin1 = Admin(user_id=1, name="Alice", admin_level=5)
+user_list.append(admin1)
+admin2 = Admin(user_id=2, name="Dan", admin_level=4)
+admin1.add_user(user_list, admin2)
 
 # Добавляем пользователей
-user1 = User(user_id=2, name="Bob")
-user2 = User(user_id=3, name="Charlie")
-admin.add_user(user_list, user1)
-admin.add_user(user_list, user2)
+user1 = User(user_id=3, name="Bob")
+user2 = User(user_id=4, name="Charlie")
+user3 = User(user_id=5, name="Eric")
+admin1.add_user(user_list, user1)
+admin1.add_user(user_list, user2)
+admin1.add_user(user_list, user3)
 
 # Вывод списка пользователей
 print("\nСписок пользователей:")
@@ -77,13 +88,13 @@ for user in user_list:
     print(user.describe())
 
 # Удаляем пользователя
-admin.remove_user(user_list, user_id=2)
+admin1.remove_user(user_list, user_id=4)
+
+# Удаляем администратора
+admin1.remove_user(user_list, user_id=2)
 
 # Вывод списка пользователей после удаления
 print("\nСписок пользователей после удаления:")
 for user in user_list:
     print(user.describe())
 
-    # Печатаем данные администратора
-    print("\nДанные администратора:")
-    print(admin.describe())
