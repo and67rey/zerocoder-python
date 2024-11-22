@@ -117,7 +117,6 @@ class Zoo:
         print("Сотрудники зоопарка:")
         for employee in self.employees:
             employee.show_employees()
-            # print(f"  - Имя: {employee.name}, Опыт: {employee.experience} лет")
 
     def save_to_file(self, filename: str):
         """Сохраняет состояние зоопарка в файл"""
@@ -161,7 +160,7 @@ else:
     lion = Mammal(name="Лев", age=4, fur_color="золотистый", sound = 'ррррр')
     bear = Mammal(name="Медведь", age=7, fur_color="бурый", sound = 'ррррааау')
     snake = Reptile(name="Змея", age=2, length=2.1, sound = 'шшшшшш')
-    crocodile = Reptile(name="Крокодил", age=6, length=2.5, sound = 'грруууу')
+    crocodile = Reptile(name="Крокодил", age=6, length=2.5, sound = 'хррруууу')
 
     # Создание сотрудников
     keeper1 = ZooKeeper(name="Иван Иванов", experience=7)
@@ -189,10 +188,13 @@ else:
     print("\nРабота сотрудников:")
     keeper1.feed_animal(lion)
     vet1.heal_animal(eagle)
+    keeper2.feed_animal(crocodile)
+    vet1.heal_animal(bear)
 
     # Демонстрация полиморфизма
     print("\nЗвуки животных:")
     animal_sound(zoo.animals)
 
     # Сохранение состояния зоопарка
+    print("\nСохранение состояния зоопарка:")
     zoo.save_to_file(zoo_file)
