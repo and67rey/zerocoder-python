@@ -114,7 +114,6 @@ class Zoo:
         print("Сотрудники зоопарка:")
         for employee in self.employees:
             employee.show_employees()
-            # print(f"  - Имя: {employee.name}, Опыт: {employee.experience} лет")
 
 # Пример использования
 
@@ -124,7 +123,7 @@ eagle = Bird(name="Орел", age=5, wing_span=2, sound = 'кииииии-иа')
 lion = Mammal(name="Лев", age=4, fur_color="золотистый", sound = 'ррррр')
 bear = Mammal(name="Медведь", age=7, fur_color="бурый", sound = 'ррррааау')
 snake = Reptile(name="Змея", age=2, length=2.1, sound = 'шшшшшш')
-crocodile = Reptile(name="Крокодил", age=6, length=2.5, sound = 'грруууу')
+crocodile = Reptile(name="Крокодил", age=6, length=2.5, sound = 'хррруууу')
 
 # Создание сотрудников
 keeper1 = ZooKeeper(name="Иван Иванов", experience=7)
@@ -155,6 +154,8 @@ zoo.show_employees()
 print("\nРабота сотрудников:")
 keeper1.feed_animal(lion)
 vet1.heal_animal(eagle)
+keeper2.feed_animal(crocodile)
+vet1.heal_animal(bear)
 
 # Демонстрация полиморфизма
 print("\nЗвуки животных:")
