@@ -1,0 +1,29 @@
+{
+    "animals": [
+        {
+            "type": "Bird",
+            "name": "Попугай",
+            "age": 2,
+            "hungry": false,
+            "illnes": false
+        },
+        {
+            "type": "Mammal",
+            "name": "Лев",
+            "age": 5,
+            "hungry": false,
+            "illnes": false
+        },
+        {
+            "type": "Reptile",
+            "name": "Змей",
+            "age": 3,
+            "hungry": false,
+            "illnes": false
+        }
+    ],
+    "staff": [
+        "Управляющий Василий",
+        "Доктор Дуллитл"
+    ]
+}
