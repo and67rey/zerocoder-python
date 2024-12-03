@@ -33,8 +33,8 @@ class PlayerHero(Hero):
 # Класс Game
 class Game:
     def __init__(self, player_name):
-        self.player = PlayerHero(player_name, attack_variation=0.5)  # Игрок с вариацией
-        self.computer = PlayerHero("Компьютер", attack_variation=0.5)      # Компьютер с вариацией
+        self.player = PlayerHero(player_name, attack_variation=0.3)  # Игрок с вариацией
+        self.computer = PlayerHero("Компьютер", attack_variation=0.3)      # Компьютер с вариацией
 
     def start(self):
         print("Игра началась!")
