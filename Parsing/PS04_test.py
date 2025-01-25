@@ -1,5 +1,4 @@
 from selenium import webdriver
-from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 import time
 import random
@@ -25,15 +24,16 @@ for element in elements:
         links_dict[link_text] = link_href
 
 print(f'Всего ссылок на странице:{len(links_dict)}')
-while True:
-    choice = input('Нажмите Enter для вывода случайно ссылки или 0 для завершения: ')
-    if choice == '0':
-        break
-    else:
-        random_item = random.choice(list(links_dict.items()))
-        print(f"Случайная пара: ключ: {random_item[0]}, значение: {random_item[1]}")
+
+for key, value in links_dict.items():
+       print(f"Название ссылки: {key},\n ссылка: {value}\n")
+       choice = input('Нажмите Enter, чтобы дальше листать ссылки, 1 - для перехода по текущей ссылке, 0 - для завершения: ')
+       if choice == '0':
+           break
+       elif choice == '1':
+           driver.get(value)
+           break
+
+time.sleep(10)
 
 driver.quit()
-
-# for link_text, link_href in links_dict.items():
-#     print(f"Название: {link_text}, Ссылка: {link_href}")

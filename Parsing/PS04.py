@@ -65,11 +65,17 @@ elif case == '1':
             break
 elif case == '2':
     all_links = find_all_links(enter_point, browser)
-    random_item = random.choice(list(all_links.items()))
-    title = random_item[0]
-    link = random_item[1]
-    print(f"Случайная ссылка для перехода: {title}\n ссылка: {link}")
-    browser.get(link)
+    # Выбор подходящей ссылки для перехода
+    for title, link in all_links.items():
+        transit_link = link
+        print(f"Название ссылки: {title},\n ссылка: {link}\n")
+        choice = input(
+            'Нажмите Enter, чтобы дальше листать ссылки, 1 - для перехода по текущей ссылке: ')
+        if choice == '1':
+            browser.get(transit_link)
+            break
+
+    # Выбор варианта продолжения после перехода по ссылке
     case_2 = input('Сделайте выбор:\n 0 - для завершения;\n 1 - листать параграфы на странице;\n 2 - перейти на одну из основных статей; \nВаш выбор: ')
     if case_2 == '0':
         print('Завершение программы')
@@ -83,12 +89,16 @@ elif case == '2':
             if k.lower() == 'q':
                 break
     elif case_2 == '2':
-        all_hatnotes = find_all_hatnotes(link, browser)
-        hatnote = random.choice(all_hatnotes)
-        # Для получения ссылки нужно найти на сайте тег "a"
-        link = hatnote.find_element(By.TAG_NAME, "a").get_attribute("href")
-        browser.get(link)
-        time.sleep(10)
+        all_hatnotes = find_all_hatnotes(transit_link, browser)
+        if len(all_hatnotes) == 0:
+            print('На странице не найдено основных статей')
+            time.sleep(3)
+        else:
+            hatnote = random.choice(all_hatnotes)
+            # Для получения ссылки нужно найти на сайте тег "a"
+            hatnote_link = hatnote.find_element(By.TAG_NAME, "a").get_attribute("href")
+            browser.get(hatnote_link)
+            time.sleep(10)
     else:
         print('Завершение программы')
         time.sleep(3)
