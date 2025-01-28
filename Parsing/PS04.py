@@ -25,7 +25,6 @@ def find_topic(driver):
     except NoSuchElementException:
         article_name = browser.find_element(By.CLASS_NAME, 'mw-page-title-main').get_attribute('textContent')
         print(f'Вы перешли на страницу: {article_name}\n')
-    time.sleep(3)
 
 # Функция для поиска всех ссылок на странице, сохраняет в словарь
 def find_all_links(driver):
@@ -84,7 +83,6 @@ while surfing:
         case '0':
             surfing = False
             print('Завершение программы')
-            time.sleep(3)
         case '1':
             paragraphs = browser.find_elements(By.TAG_NAME, "p")
             print(f'Всего параграфов: {len(paragraphs)}')
@@ -97,18 +95,17 @@ while surfing:
             all_links = find_all_links(browser)
             if len(all_links) == 0:
                 print('На этой странице нет ссылок\n')
-                time.sleep(3)
             else:
                 # Выбор подходящей ссылки для перехода
                 for title, link in all_links.items():
                     transit_link = link
-                    print(f"Название ссылки: {title},\n ссылка: {link}\n")
+                    print(f"Название ссылки: {title},\nссылка: {link}\n")
                     link_select = input('Нажмите Enter, чтобы дальше листать ссылки, 1 - для перехода по текущей ссылке: ')
                     if link_select == '1':
                         browser.get(transit_link)
                         article_name = browser.find_element(By.CLASS_NAME, 'mw-page-title-main').get_attribute(
                             'textContent')
-                        print(f'Вы перешли на страницу: {article_name}\n')
+                        print(f'\nВы перешли на страницу: {article_name}\n')
                         break
         case '3':
             all_hatnotes = find_all_hatnotes(browser)
@@ -122,12 +119,10 @@ while surfing:
                 browser.get(hatnote_link)
                 article_name = browser.find_element(By.CLASS_NAME, 'mw-page-title-main').get_attribute('textContent')
                 print(f'Вы перешли на страницу: {article_name}\n')
-                time.sleep(3)
         case '4':
             find_topic(browser)
         case _:
             print('\nОшибочный ввод, повторите ваш выбор')
-            time.sleep(3)
 
 browser.quit()
 
