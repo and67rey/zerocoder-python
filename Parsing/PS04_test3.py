@@ -130,8 +130,3 @@ while surfing:
             time.sleep(3)
 
 browser.quit()
-
-
-
-
-
