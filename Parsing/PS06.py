@@ -23,6 +23,7 @@ for light in lights:
    try:
      name = light.find_element(By.CSS_SELECTOR, 'div.lsooF').find_element(By.CSS_SELECTOR, 'span').text
      price = light.find_element(By.CSS_SELECTOR, 'div.q5Uds').find_element(By.CSS_SELECTOR, 'span').text
+     price = price.replace('руб.', '')
      link = light.find_element(By.CSS_SELECTOR, 'link').get_attribute('href')
    except:
      print("произошла ошибка при парсинге")
@@ -34,5 +35,5 @@ driver.quit()
 
 with open("lights.csv", 'w',newline='', encoding='utf-8') as file:
     writer = csv.writer(file)
-    writer.writerow(['Название светильника', 'Цена', 'Ссылка на светильник'])
+    writer.writerow(['Название светильника', 'Цена, руб.', 'Ссылка на светильник'])
     writer.writerows(parsed_data)
