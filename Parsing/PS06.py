@@ -32,7 +32,7 @@ for light in lights:
 
 driver.quit()
 
-with open("hh.csv", 'w',newline='', encoding='utf-8') as file:
+with open("lights.csv", 'w',newline='', encoding='utf-8') as file:
     writer = csv.writer(file)
     writer.writerow(['Название светильника', 'Цена', 'Ссылка на светильник'])
     writer.writerows(parsed_data)
