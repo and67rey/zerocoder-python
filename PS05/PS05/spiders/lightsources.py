@@ -11,5 +11,5 @@ class LightsourcesSpider(scrapy.Spider):
             yield {
                 'name': light.css('div.lsooF span::text').get(),
                 'price': light.css('div.q5Uds span::text').get(),
-                'url': light.css('a').attrib['href']
+                'url': light.css('link').attrib['href']
             }
