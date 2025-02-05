@@ -1,7 +1,6 @@
 import pandas as pd
 
-data = pd.read_csv('Kepler Telescope Exoplanets.csv')
-df = pd.DataFrame(data)
+df = pd.read_csv('Kepler Telescope Exoplanets.csv')
 
 print(df.head())
 print()
