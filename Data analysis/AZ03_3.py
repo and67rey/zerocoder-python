@@ -3,37 +3,29 @@
 # построение гистограммы цен на диваны с сайта divan.ru
 
 import pandas as pd
-import csv
 import matplotlib.pyplot as plt
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 driver = webdriver.Chrome()
-# driver = webdriver.Firefox()
-
-# url = 'https://www.divan.ru/rostov-na-donu/category/svet'
-url = 'https://www.divan.ru/rostov-na-donu/category/divany-i-kresla'
-
+url = 'https://www.divan.ru/sankt-peterburg/category/divany-i-kresla'
 driver.get(url)
-
 time.sleep(3)
 
-lights = driver.find_elements(By.CSS_SELECTOR, 'div._Ud0k')
+divans = driver.find_elements(By.CSS_SELECTOR, 'div._Ud0k')
 
-print(f'Количество светильников на странице {len(lights)}\n')
+print(f'Количество диванов на странице {len(divans)}\n')
 
 parsed_data = []
 
 # Используем конструкцию try-except, чтобы "ловить" ошибки, как только они появляются
-for light in lights:
+for divan in divans:
    try:
-     # name = light.find_element(By.CSS_SELECTOR, 'div.lsooF').find_element(By.CSS_SELECTOR, 'span').text
-     price = light.find_element(By.CSS_SELECTOR, 'div.q5Uds').find_element(By.CSS_SELECTOR, 'span').text
+     price = divan.find_element(By.CSS_SELECTOR, 'div.q5Uds').find_element(By.CSS_SELECTOR, 'span').text
      price = price.replace('руб.', '')
      price = price.replace(' ', '')
      price = int(price)
-     # link = light.find_element(By.CSS_SELECTOR, 'link').get_attribute('href')
    except:
      print("произошла ошибка при парсинге")
      continue
@@ -42,23 +34,30 @@ for light in lights:
 
 driver.quit()
 
+print('Список цен на диваны по результатам парсинга с сайта divan.ru')
 print(parsed_data)
+print()
 
-df = pd.DataFrame(parsed_data)
+# Создание DataFrame в pandas
+data = {'Цена на диван': parsed_data}
+df = pd.DataFrame(data)
 print(df.describe())
 print()
-mean_price = df.mean()
-print(f'Среднее значение цены на диваны {mean_price}')
+
+# Вычисление среднего значения цен на диваны
+mean_price = df['Цена на диван'].mean()
+print(f'Среднее значение цены на диваны: {round(mean_price, 2)} руб.')
 print()
 
+# Сохранение данных в csv файл
 df.to_csv('divan_prices.csv', index=False)
 
-# Построение гистограммы
-bins = 10
-plt.hist(parsed_data, bins=bins, edgecolor='black')
+# Построение гистограммы цен на диваны
+bins = 20
+plt.hist(df, bins=bins, edgecolor='black')
 # Добавление заголовка и меток осей
 plt.title('Гистограмма цен на диваны на сайте divan.ru')
 plt.xlabel('Цена на диван, руб.')
 plt.ylabel('Частота')
-# Показать гистограмму
+# Вывод гистограммы
 plt.show()

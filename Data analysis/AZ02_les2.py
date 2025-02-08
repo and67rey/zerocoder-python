@@ -1,7 +1,5 @@
 import pandas as pd
-
 import numpy as np
-
 import matplotlib.pyplot as plt
 
 data = {'value': [1, 2, 3, 3, 3, 4, 4, 4, 5, 6, 7, 8, 9, 10, 55]}
