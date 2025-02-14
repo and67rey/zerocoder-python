@@ -1,0 +1,55 @@
+.card{
+   width: 400px;
+   height: 500px;
+   background-color: #FFFACD;
+   border-radius: 60px;
+   transition: 1s;
+}
+.card:hover {
+   width: 400px;
+   height: 500px;
+   background-color: #ADD8E6;
+   border-radius: 60px;
+   transition: 1s;
+}
+.photo {
+   text-align: center;
+}
+.info {
+   padding: 10px;
+}
+img {
+   position: relative;
+   width: 300px;
+   top: 20px;
+   border-radius: 20px;
+   transition: 1s;
+}
+img:hover {
+   position: relative;
+   width: 320px;
+   top: 20px;
+   border-radius: 20px;
+   transition: 1s;
+}
+p {
+   position: relative;
+   left: 30px;
+   transition: 1s;
+}
+p:hover {
+   position: relative;
+   left: 30px;
+   font-style: italic;
+   font-size: 18px;
+   transition: 1s;
+}
+h3 {
+    text-align: center;
+    transition: 1s;
+}
+h3:hover {
+    text-align: center;
+    font-size: 24px;
+    transition: 1s;
+}
