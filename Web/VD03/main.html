@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Структура сайта для урока VD03</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+      .accordion-button {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 2rem; /* Увеличиваем размер текста */
+      }
+      /* Убираем стрелку (иконку) справа, чтобы не мешала центрированию */
+      .accordion-button::after {
+        display: none !important;
+      }
+    </style>
+</head>
+<body>
+
+<h1 align = 'center'>Mars Terraforming, Inc.</h1>
+<h4 align = 'center'><em>Технологии будущего для жизни на Марсе!</em></h4>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Панель навигации</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Переключатель навигации">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Опция меню 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Опция меню 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Опция меню 3</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Опция меню 4</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Опция меню 5</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Опция меню 6</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Опция меню 7</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+        <button class="btn btn-outline-success" type="submit">Поиск</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<span class="placeholder col-12 bg-success"></span>
+
+<div id="carouselExampleInterval" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+
+  <!-- Добавляем d-flex justify-content-center align-items-center для выравнивания -->
+  <div class="carousel-inner">
+    <div class="carousel-item active text-center d-flex justify-content-center align-items-center" data-bs-interval="3000">
+      <img src="image/mars 1.png" class="d-block" style="max-height: 600px;" alt="...">
+    </div>
+    <div class="carousel-item text-center d-flex justify-content-center align-items-center" data-bs-interval="3000">
+      <img src="image/mars 2.png" class="d-block" style="max-height: 600px;" alt="...">
+    </div>
+    <div class="carousel-item text-center d-flex justify-content-center align-items-center" data-bs-interval="3000">
+      <img src="image/mars 3.png" class="d-block" style="max-height: 600px;" alt="...">
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Предыдущий</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Следующий</span>
+  </button>
+</div>
+
+<span class="placeholder col-12 bg-success"></span>
+<span class="placeholder col-12 bg-white"></span>
+
+<h2 align = 'center'><b>Наши ведущие сотрудники</b></h2>
+<span class="placeholder col-12 bg-white"></span>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="card" style="width: 20rem;">
+              <img src="image/spaceman 1.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Максим Каммерер</h5>
+                <p class="card-text">Ведущий эксперт в области климатической инженерии, биотехнологий и автономных систем.
+                  Отвечает за разработку и внедрение передовых технологий терраформирования Марса.
+                  Объединяет науку и инженерные решения для создания устойчивой экосистемы на Красной планете.
+                  Ведет команду инноваций, меняя будущее человечества. 🚀</p>
+                <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="card" style="width: 20rem;">
+              <img src="image/robot 1.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">MD-300</h5>
+                <p class="card-text">Высокотехнологичный андроид и ведущий инженер Mars Terraforming, Inc.
+                  Оснащен передовым ИИ, анализирует данные, управляет строительством и адаптирует технологии к условиям Марса.
+                  Обладает автономностью, высокоточной манипуляцией и способностью к самообучению, обеспечивая надежность и эффективность терраформирования.
+                  Будущее начинается с MD-200! 🤖🚀
+                <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="card" style="width: 20rem;">
+              <img src="image/martian 1.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Ха Тил</h5>
+                <p class="card-text">Chief Biologist, один из последних представителей марсианской цивилизации, обладающий телепатическими способностями.
+                  Разрабатывает биотехнологии для создания экосистемы на Марсе. Специализируется на выращивании устойчивых растений, микробиологии и кислородообразующих процессах.
+                  Формирует биологическое будущее Красной планеты.🌱🚀
+                </p>
+                <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<span class="placeholder col-12 bg-success"></span>
+
+<div class="accordion accordion-flush" id="accordionFlushExampleC">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOneC" aria-expanded="false" aria-controls="flush-collapseOneC">
+        Кто мы?
+      </button>
+    </h2>
+    <div id="flush-collapseOneC" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExampleC">
+      <div class="accordion-body">Mars Terraforming, Inc. — ведущая инновационная компания, разрабатывающая технологии будущего для превращения Марса в пригодную для жизни среду. <br>
+        Мы объединяем науку, инженерное мастерство и передовые разработки, чтобы создать устойчивую экосистему на Красной планете.<br>
+        Наша миссия — подготовить Марс к заселению, используя передовые решения в области климатической инженерии, биотехнологий и автономных систем.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwoC" aria-expanded="false" aria-controls="flush-collapseTwoC">
+        Что мы делаем?
+      </button>
+    </h2>
+    <div id="flush-collapseTwoC" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExampleC">
+      <div class="accordion-body">Мы разрабатываем технологии для повышения температуры, создания атмосферы, обогащения почвы и производства кислорода.<br>
+          Наша команда включает ведущих ученых, инженеров и визионеров, работающих над революционными проектами в области терраформирования. <br>
+          Мы сотрудничаем с космическими агентствами, исследовательскими институтами и частными компаниями, чтобы сделать межпланетное будущее человечества реальностью.<br>
+          Мы верим, что освоение Марса — это не просто научная фантастика, а следующий шаг эволюции человечества. <br>
+          Будущее начинается здесь. Марс ждет! 🚀🌱</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThreeC" aria-expanded="false" aria-controls="flush-collapseThreeC">
+        Ты с нами?
+      </button>
+    </h2>
+    <div id="flush-collapseThreeC" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExampleC">
+      <div class="accordion-body">Будущее человечества начинается за пределами Земли! 🚀 <br>
+          Mars Terraforming, Inc. приглашает ученых, инженеров, мечтателей и новаторов присоединиться к великой миссии — превращению Марса в наш новый дом.<br>
+          Нам нужны те, кто готов бросить вызов невозможному, кто мечтает оставить след в истории и сделать первый шаг к жизни среди звезд.<br>
+          Готов ли ты стать частью команды, которая изменит будущее? Время действовать!</div>
+    </div>
+  </div>
+</div>
+
+<span class="placeholder col-12 bg-success"></span>
+
+<footer class="bg-light text-center py-3">
+    <h2 align = 'center'><b>Контактная информация</b></h2>
+    <h4 align = 'center'><em>Телефон: +7 999 888-88-88</em></h4>
+    <h4 align = 'center'><em>E-mail: terraforming@mars.com</em></h4>
+</footer>
+
+<span class="placeholder col-12 bg-success"></span>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<footer class="bg-light text-center py-3">
+  <a href="#"><i class="fa fa-vk fa-2x"></i></a>
+  <a href="#"><i class="fa fa-telegram fa-2x"></i></a>
+  <a href="#"><i class="fa fa-youtube fa-2x"></i></a>
+  <a href="#"><i class="fa fa-whatsapp fa-2x"></i></a>
+  <a href="#"><i class="fa fa-skype fa-2x"></i></a>
+</footer>
+
+<span class="placeholder col-12 bg-success"></span>
+
+<footer class="bg-dark text-white text-center py-3">
+    <p>© 2025 Mars Terraforming. Все права защищены.</p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
