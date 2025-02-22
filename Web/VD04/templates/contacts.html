@@ -5,9 +5,9 @@
     <title>Mars Terraforming, Inc.</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-<body>
 
-<h1 align = 'center'>Mars Terraforming, Inc.</h1>
+<body>
+<h3 align = 'center'>Mars Terraforming, Inc.</h3>
 <h5 align = 'center'><em>Технологии будущего для жизни на Марсе!</em></h5>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
@@ -82,10 +82,32 @@
 
 <footer class="bg-light text-center py-3">
     <h2 align = 'center'><b>Контактная информация</b></h2>
-    <h4 align = 'center'><em>Телефон: +7 900 RED-PLANET</em></h4>
+    <h4 align = 'center'><em>Телефон: +7 800 RED-PLANET</em></h4>
     <h4 align = 'center'><em>E-mail: terraforming@mars.com</em></h4>
 </footer>
 
+<style>
+  .audio-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          margin-top: 20px;
+        }
+</style>
+
+<div class="audio-container">
+  <h5>Mars Revival Anthem</h5>
+  <audio controls controlsList="nodownload" id="audioPlayer">
+    <source src="../static/audio/Mars Revival Anthem.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<script>
+  document.getElementById('audioPlayer').volume = 0.3;
+</script>
+
+<span class="placeholder col-12 bg-white"></span>
 <span class="placeholder col-12 bg-success"></span>
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -104,5 +126,6 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </body>
 </html>
