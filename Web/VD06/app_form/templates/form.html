@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Данные пользователя</title>
+</head>
+<body>
+<!#создает класс container>
+    <div class="container">
+        <h4>Форма № 1 для заполнения</h4>
+        <!#создает форму с методом POST, чтобы отправлять данные из этой формы>
+        <form method="POST" action="/">
+            <div class="form-group">
+                <label for="name">Имя:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="city">Город:</label>
+                <input type="text" class="form-control" id="city" name="city" required>
+            </div>
+            <div class="form-group">
+                <label for="hobby">Хобби:</label>
+                <input type="text" class="form-control" id="hobby" name="hobby">
+            </div>
+            <div class="form-group">
+                <label for="age">Возраст:</label>
+                <input type="number" class="form-control" id="age" name="age">
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить форму</button>
+        </form>
+        <hr>
+       <!#использует цикл for, чтобы иметь возможность выводить данные на страницу>
+        <h4>Данные пользователя</h4>
+        {% for item in data %}
+       <!#создает отдельный div, внутри которого записываются данные пользователя>
+        <div class="data">
+            <p><b>Имя:</b> {{ item.name }}</p>
+            <p><b>Город:</b> {{ item.city }}</p>
+            <p><b>Хобби:</b> {{ item.hobby }}</p>
+            <p><b>Возраст, лет:</b> {{ item.age }}</p>
+            <hr>
+        </div>
+        {% endfor %}
+    </div>
+    <!#подключает Bootstrap для стилизации>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

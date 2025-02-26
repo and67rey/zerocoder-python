@@ -8,7 +8,7 @@ def main_page():
 
 @app.route("/blog/")
 def blog_page():
-    return render_template("blog.html")
+    return render_template("test_form.html")
 
 @app.route("/contacts/")
 def contact_page():
