@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>Данные пользователя</title>
+    <title>Данные пользователей</title>
 </head>
 <body>
 <!#создает класс container>
     <div class="container">
-        <h4>Форма № 1 для заполнения</h4>
+        <br>
+        <h4>Форма для заполнения</h4>
         <!#создает форму с методом POST, чтобы отправлять данные из этой формы>
         <form method="POST" action="/">
             <div class="form-group">
@@ -31,10 +32,10 @@
             <button type="submit" class="btn btn-primary">Отправить форму</button>
         </form>
         <hr>
-       <!#использует цикл for, чтобы иметь возможность выводить данные на страницу>
+        <!#использует цикл for, чтобы иметь возможность выводить данные на страницу>
         <h4>Данные пользователя</h4>
         {% for item in data %}
-       <!#создает отдельный div, внутри которого записываются данные пользователя>
+        <!#создает отдельный div, внутри которого записываются данные пользователя>
         <div class="data">
             <p><b>Имя:</b> {{ item.name }}</p>
             <p><b>Город:</b> {{ item.city }}</p>
