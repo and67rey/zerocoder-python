@@ -9,7 +9,7 @@ def index(request):
     return HttpResponse(content)
 
 def data(request):
-    return HttpResponse("<h2>Это страница с данными</h1>")
+    return HttpResponse("<h2>Это страница с данными</h2>")
 
 def text(request):
-    return HttpResponse("<h2>Это страница с текстом</h1>")
+    return HttpResponse("<h2>Это страница с текстом</h2>")
