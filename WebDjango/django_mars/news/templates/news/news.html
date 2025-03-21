@@ -1,0 +1,31 @@
+{% extends 'news/layout.html' %}
+
+{% block title %}
+  <title>Новостная страница</title>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+	<h1 class="mb-4 text-center" style="color: #191970;">Новостная страница</h1>
+    <div class="row">
+        {% if news %}
+            {% for new in news %}
+            <div class="col-md-12 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ new.title }}</h3>
+                        <p class="card-text">{{ new.short_description }}</p>
+                        <h5 class="card-subtitle mb-2 text-muted">Новость:</h5>
+                        <p class="card-text">{{ new.text }}</p>
+                        <p class="text-muted">Дата и время публикации: {{ new.pub_date|date:"d.m.Y H:i" }}</p>
+                        <p class="text-muted">Автор публикации: {{ new.author }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <h4>Новостей ещё нет.</h4>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

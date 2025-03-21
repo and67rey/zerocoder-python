@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
+  <div class="container-fluid">
+    <!-- Кнопка для адаптивного меню -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Добавляем отступ слева для меню -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-left: 100px;">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'films' %}" style="color: #FFFF00;">Фильмы</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'create' %}" style="color: #FFFF00;">Создать запись</a>
+        </li>
+      </ul>
+      <!-- Отступ справа для текста -->
+      <span class="navbar-text text-white" style="margin-right: 100px;">
+        Лучшие фильмы для просмотра
+      </span>
+    </div>
+  </div>
+</nav>

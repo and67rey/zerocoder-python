@@ -1,0 +1,32 @@
+{% extends 'news/layout.html' %}
+
+{% block title %}
+  <title>Страница для добавления новостей</title>
+{% endblock %}
+
+{% block content %}
+  <div class="container mt-4">
+        <h2 class="mb-4 text-center">Добавить новость</h2> <!-- Центрирование заголовка -->
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.title }}
+            </div>
+            <br>
+            <div class="form-group">
+                {{ form.short_description }}
+            </div>
+            <br>
+            <div class="form-group">
+                {{ form.text }}
+            </div>
+            <br>
+            <div class="form-group col-md-4">
+                {{ form.pub_date }}
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Добавить новость</button>
+        </form>
+        <p>{{error}}</p>
+    </div>
+{% endblock %}

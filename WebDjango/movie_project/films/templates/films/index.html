@@ -1,0 +1,30 @@
+{% extends 'films/layout.html' %}
+
+{% block title %}
+  <title>Фильмы</title>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+	<h2 class="mb-4 text-center" style="color: #191970;">Фильмы: описания и отзывы</h2>
+    <div class="row">
+        {% if films %}
+            {% for film in films %}
+            <div class="col-md-12 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ film.name }}</h3>
+                        <h5 class="card-subtitle mb-2 text-muted">Описание фильма:</h5>
+                        <p class="card-text">{{ film.description }}</p>
+                        <h5 class="card-subtitle mb-2 text-muted">Отзыв о фильме:</h5>
+                        <p class="card-text">{{ film.review }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <h4>Пока нет записей о фильмах.</h4>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

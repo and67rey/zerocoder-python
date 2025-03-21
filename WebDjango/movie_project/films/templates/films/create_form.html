@@ -1,0 +1,28 @@
+{% extends 'films/layout.html' %}
+
+{% block title %}
+  <title>Страница для добавления записей о фильмах</title>
+{% endblock %}
+
+{% block content %}
+  <div class="container mt-4">
+        <h2 class="mb-4 text-center" style="color: #191970;">Добавить запись о фильме</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.name }}
+            </div>
+            <br>
+            <div class="form-group">
+                {{ form.description }}
+            </div>
+            <br>
+            <div class="form-group">
+                {{ form.review }}
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary" style="background-color: #191970;">Добавить запись</button>
+        </form>
+        <p>{{error}}</p>
+    </div>
+{% endblock %}
